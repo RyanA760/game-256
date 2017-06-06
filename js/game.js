@@ -1,6 +1,6 @@
 var Game = function() {
 
-  this.board = [null,null,null,null,null,2,null,null,null,null,null,null,null,null,null,null]
+  this.board = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
   this.rows = this.generateRows()
   this.columns = this.generateColumns()
 }
@@ -112,7 +112,7 @@ Game.prototype.collapse = function(row) {
     if(zeroLessRow[i] === zeroLessRow[i+1]){
       zeroLessRow[i+1] = zeroLessRow[i+1] + zeroLessRow[i+1]
       finalRow.push(zeroLessRow[i+1])
-      zeroLessRow[i] = null
+      zeroLessRow[i] = null 
       i++
       }
       else if(zeroLessRow[i] != null) {
