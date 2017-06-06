@@ -32,3 +32,14 @@ div.row {
   justify-content: space-around;
 }
 
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+ul {
+  font-size: 30px;
+}
