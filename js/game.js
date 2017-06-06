@@ -1,6 +1,6 @@
 var Game = function() {
 
-  this.board = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  this.board = [null,null,null,null,null,2,null,null,null,null,null,null,null,null,null,null]
   this.rows = this.generateRows()
   this.columns = this.generateColumns()
 }
@@ -94,7 +94,7 @@ Game.prototype.regenerateBoardFromColumns = function(columns) {
 Game.prototype.assignValue = function() {
   var randomNumberArray = []
   this.board.forEach(function(value, index) {
-    if(value === 0){
+    if(value === null){
       randomNumberArray.push(index)
     }
   })
@@ -106,21 +106,21 @@ Game.prototype.randomNumber = function(){
 }
 
 Game.prototype.collapse = function(row) {
-  var zeroLessRow = _.reject(row, function(num){ return num === 0 })
+  var zeroLessRow = _.reject(row, function(num){ return num === null })
   var finalRow = [];
   for(var i = 0; i < zeroLessRow.length; i++){
     if(zeroLessRow[i] === zeroLessRow[i+1]){
       zeroLessRow[i+1] = zeroLessRow[i+1] + zeroLessRow[i+1]
       finalRow.push(zeroLessRow[i+1])
-      zeroLessRow[i] = 0
+      zeroLessRow[i] = null
       i++
       }
-      else if(zeroLessRow[i] != 0) {
+      else if(zeroLessRow[i] != null) {
         finalRow.push(zeroLessRow[i])
       }
     }
   while(finalRow.length < row.length) {
-    finalRow.unshift(0)
+    finalRow.unshift(null)
   }
   return finalRow
 }

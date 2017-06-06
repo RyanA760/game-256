@@ -73,3 +73,7 @@ In your Game model and controller write methods to update the DOM to display you
 * Implement a score display.
 * Implement starting a new game.
 * Implement storing the game in LocalStorage so that it still shows up if you close the tab.
+
+
+Need to write some functioning to add buttons for arrow key events, this will allow phone or mobile compatibility as well as anyone without a keyboard or arrow keys in general. 
+Need to add a reset board button which should just generate 
